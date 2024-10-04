@@ -2,6 +2,7 @@ import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/route_page.dart';
 import 'package:portfolio/screen/company/company_screen.dart';
+import 'package:portfolio/util/text_util.dart';
 
 void main() {
   runApp(MyApp());
@@ -57,6 +58,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple.shade600),
+        fontFamily: 'pretendard',
+        textTheme: TextUtil.setTextTheme()
       ),
       routerDelegate: routerDelegate,
       routeInformationParser: BeamerParser(),
