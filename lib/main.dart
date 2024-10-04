@@ -51,13 +51,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    MaterialApp.router(
+    return MaterialApp.router(
+      title: "Homepage",
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple.shade600),
+      ),
       routerDelegate: routerDelegate,
       routeInformationParser: BeamerParser(),
       backButtonDispatcher: BeamerBackButtonDispatcher(delegate: routerDelegate),
-    );
-    return MaterialApp(
-      title: '',
     );
   }
 }
