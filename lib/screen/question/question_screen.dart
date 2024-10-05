@@ -25,20 +25,22 @@ class _QuestionScreenState extends State<QuestionScreen> {
     ) {
       return Scaffold(
         endDrawer: PageDrawer(currentIndex: 3, tablet: tablet),
-        body: Column(
-          children: [
-            Menu(
-              currentIndex: 3,
-              screenModel: screenModel,
-            ),
-            Header(
-              title: '온라인 문의',
-              subTitle: '프로젝트 및 서비스 문의를 남겨주세요',
-              backgroundImage: AssetPath.questionHeaderImage,
-              screenModel: screenModel,
-            ),
-            Footer(),
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Menu(
+                currentIndex: 3,
+                screenModel: screenModel,
+              ),
+              Header(
+                title: '온라인 문의',
+                subTitle: '프로젝트 및 서비스 문의를 남겨주세요',
+                backgroundImage: AssetPath.questionHeaderImage,
+                screenModel: screenModel,
+              ),
+              Footer(),
+            ],
+          ),
         ),
       );
     });
