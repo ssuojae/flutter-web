@@ -19,7 +19,9 @@ final class Menu extends StatelessWidget {
         children: [
           const SizedBox(width: 20),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              MenuUtil.changeIndex(context, 0);
+            },
             splashColor: Colors.transparent,
             highlightColor: Colors.transparent,
             hoverColor: Colors.transparent,
@@ -38,7 +40,9 @@ final class Menu extends StatelessWidget {
                   ? TextUtil.get16(context, MyColor.gray90).copyWith(fontWeight: FontWeight.bold)
                   : TextUtil.get16(context, MyColor.gray90),
               size: const Size(100, 40),
-              onPressed: () {},
+              onPressed: () {
+                MenuUtil.changeIndex(context, index);
+              },
             );
           }),
           const SizedBox(width: 20),
