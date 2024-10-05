@@ -6,16 +6,21 @@ import 'package:portfolio/util/text_util.dart';
 import 'package:portfolio/widgets/custom_text_button.dart';
 import 'package:portfolio/widgets/menu/menu_tablet_and_mobile.dart';
 
+import '../../model/screen_model.dart';
+
 final class Menu extends StatelessWidget {
   final int currentIndex;
+  final ScreenModel screenModel;
 
-  const Menu({super.key, required this.currentIndex});
+  const Menu({super.key, required this.currentIndex, required this.screenModel});
 
   @override
   Widget build(BuildContext context) {
     final boldTextStyle = TextUtil.get16(context, MyColor.gray90).copyWith(fontWeight: FontWeight.bold);
     final normalTextStyle = TextUtil.get16(context, MyColor.gray90);
-    return MenuTabletAndMobile(currentIndex: currentIndex, tablet: true);
+    if (screenModel.tablet || screenModel.mobile) {
+      return MenuTabletAndMobile(currentIndex: currentIndex, tablet: screenModel.tablet);
+    }
     return SizedBox(
       height: 70,
       width: double.infinity,

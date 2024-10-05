@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../widgets/menu/menu.dart';
+import '../../widgets/screen_layout_builder.dart';
 
 class PortfolioScreen extends StatefulWidget {
   const PortfolioScreen({super.key});
@@ -12,12 +13,22 @@ class PortfolioScreen extends StatefulWidget {
 class _PortfolioScreenState extends State<PortfolioScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Menu(currentIndex: 1),
-        ],
-      ),
-    );
+    return ScreenLayoutBuilder(myBuilder: (
+        screenModel,
+        web,
+        tablet,
+        mobile,
+        ) {
+      return Scaffold(
+        body: Column(
+          children: [
+            Menu(
+              currentIndex: 1,
+              screenModel: screenModel,
+            ),
+          ],
+        ),
+      );
+    });
   }
 }
