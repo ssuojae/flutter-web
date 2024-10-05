@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/util/asset_path.dart';
 import 'package:portfolio/util/menu_util.dart';
+import 'package:portfolio/util/my_color.dart';
+import 'package:portfolio/util/text_util.dart';
+import 'package:portfolio/widgets/custom_text_button.dart';
 
 final class Menu extends StatelessWidget {
   const Menu({super.key});
@@ -27,7 +30,12 @@ final class Menu extends StatelessWidget {
           ),
           const Spacer(),
           ...List.generate(MenuUtil.menuList.length, (index) {
-            return Text(MenuUtil.menuList[index]);
+            return CustomTextButton(
+              label: MenuUtil.menuList[index],
+              textStyle: TextUtil.get16(context, MyColor.gray90),
+              size: Size(100, 40),
+              onPressed: () {},
+            );
           }),
           const SizedBox(width: 20),
         ],
