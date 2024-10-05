@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/util/asset_path.dart';
+import 'package:portfolio/widgets/footer.dart';
 import 'package:portfolio/widgets/header.dart';
 
 import '../../widgets/menu/menu.dart';
@@ -35,7 +36,8 @@ class _QuestionScreenState extends State<QuestionScreen> {
               subTitle: '프로젝트 및 서비스 문의를 남겨주세요',
               backgroundImage: AssetPath.questionHeaderImage,
               screenModel: screenModel,
-            )
+            ),
+            Footer(),
           ],
         ),
       );
