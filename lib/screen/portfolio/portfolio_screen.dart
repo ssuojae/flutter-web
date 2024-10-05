@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../widgets/menu/menu.dart';
+
 final class PortfolioScreen extends StatefulWidget {
   const PortfolioScreen({super.key});
 
@@ -11,7 +13,11 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text("portfolio"),
+      body: Column(
+        children: [
+          Menu(currentIndex: 1),
+        ],
+      ),
     );
   }
 }

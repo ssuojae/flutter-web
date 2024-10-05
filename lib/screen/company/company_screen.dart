@@ -14,7 +14,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
     return Scaffold(
       body: Column(
         children: [
-          Menu(),
+          Menu(currentIndex: 0,),
         ],
       ),
     );

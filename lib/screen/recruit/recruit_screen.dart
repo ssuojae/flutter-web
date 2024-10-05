@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../widgets/menu/menu.dart';
+
 final class RecruitScreen extends StatefulWidget {
   const RecruitScreen({super.key});
 
@@ -11,7 +13,11 @@ class _RecruitScreenState extends State<RecruitScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text("Qustion"),
+      body: Column(
+        children: [
+          Menu(currentIndex: 2),
+        ],
+      ),
     );
   }
 }

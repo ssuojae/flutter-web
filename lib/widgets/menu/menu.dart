@@ -6,7 +6,9 @@ import 'package:portfolio/util/text_util.dart';
 import 'package:portfolio/widgets/custom_text_button.dart';
 
 final class Menu extends StatelessWidget {
-  const Menu({super.key});
+  final int currentIndex;
+
+  const Menu({super.key, required this.currentIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +34,10 @@ final class Menu extends StatelessWidget {
           ...List.generate(MenuUtil.menuList.length, (index) {
             return CustomTextButton(
               label: MenuUtil.menuList[index],
-              textStyle: TextUtil.get16(context, MyColor.gray90),
-              size: Size(100, 40),
+              textStyle: currentIndex == index
+                  ? TextUtil.get16(context, MyColor.gray90).copyWith(fontWeight: FontWeight.bold)
+                  : TextUtil.get16(context, MyColor.gray90),
+              size: const Size(100, 40),
               onPressed: () {},
             );
           }),
