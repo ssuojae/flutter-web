@@ -24,11 +24,11 @@ final class ScreenLayoutBuilder extends StatelessWidget {
 }
 
 typedef _MyBuilder = Widget Function(
-    ScreenModel screenModel,
-    bool web,
-    bool tablet,
-    bool mobile,
-    );
+  ScreenModel screenModel,
+  bool web,
+  bool tablet,
+  bool mobile,
+);
 
 final class _ScreenSizeConfig {
   static const double tabletWidth = 1024;
@@ -40,7 +40,7 @@ final class _ScreenSizeConfig {
     return maxWidth <= mobileWidth
         ? ScreenModel(false, false, true)
         : maxWidth <= tabletWidth
-        ? ScreenModel(false, true, false)
-        : ScreenModel(true, false, false);
+            ? ScreenModel(false, true, false)
+            : ScreenModel(true, false, false);
   }
 }

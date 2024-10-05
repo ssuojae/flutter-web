@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../widgets/menu/menu.dart';
 
-final class PortfolioScreen extends StatefulWidget {
+class PortfolioScreen extends StatefulWidget {
   const PortfolioScreen({super.key});
 
   @override

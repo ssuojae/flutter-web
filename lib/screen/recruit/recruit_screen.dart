@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../widgets/menu/menu.dart';
 
-final class RecruitScreen extends StatefulWidget {
+class RecruitScreen extends StatefulWidget {
   const RecruitScreen({super.key});
 
   @override
@@ -15,7 +15,9 @@ class _RecruitScreenState extends State<RecruitScreen> {
     return Scaffold(
       body: Column(
         children: [
-          Menu(currentIndex: 2),
+          Menu(
+            currentIndex: 2,
+          ),
         ],
       ),
     );

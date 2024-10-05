@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../widgets/menu/menu.dart';
 
-final class QuestionScreen extends StatefulWidget {
+class QuestionScreen extends StatefulWidget {
   const QuestionScreen({super.key});
 
   @override
