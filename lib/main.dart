@@ -2,6 +2,9 @@ import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/route_page.dart';
 import 'package:portfolio/screen/company/company_screen.dart';
+import 'package:portfolio/screen/portfolio/portfolio_screen.dart';
+import 'package:portfolio/screen/question/question_screen.dart';
+import 'package:portfolio/screen/recruit/recruit_screen.dart';
 import 'package:portfolio/util/text_util.dart';
 
 void main() {
@@ -31,21 +34,21 @@ class MyApp extends StatelessWidget {
           return const BeamPage(
             key: ValueKey('portfolio'),
             title: 'Portfolio',
-            child: CompanyScreen(),
+            child: PortfolioScreen(),
           );
         },
         RoutePage.question: (context, state, data) {
           return const BeamPage(
             key: ValueKey('question'),
             title: 'Question',
-            child: CompanyScreen(),
+            child: QuestionScreen(),
           );
         },
         RoutePage.recruit: (context, state, data) {
           return const BeamPage(
             key: ValueKey('recruit'),
             title: 'Recruit',
-            child: CompanyScreen(),
+            child: RecruitScreen(),
           );
         },
       }).call);
