@@ -4,6 +4,7 @@ import 'package:portfolio/util/menu_util.dart';
 import 'package:portfolio/util/my_color.dart';
 import 'package:portfolio/util/text_util.dart';
 import 'package:portfolio/widgets/custom_text_button.dart';
+import 'package:portfolio/widgets/menu/menu_tablet_and_mobile.dart';
 
 final class Menu extends StatelessWidget {
   final int currentIndex;
@@ -12,6 +13,9 @@ final class Menu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final boldTextStyle = TextUtil.get16(context, MyColor.gray90).copyWith(fontWeight: FontWeight.bold);
+    final normalTextStyle = TextUtil.get16(context, MyColor.gray90);
+    return MenuTabletAndMobile(currentIndex: currentIndex, tablet: true);
     return SizedBox(
       height: 70,
       width: double.infinity,
@@ -36,11 +40,10 @@ final class Menu extends StatelessWidget {
           ...List.generate(MenuUtil.menuList.length, (index) {
             return CustomTextButton(
               label: MenuUtil.menuList[index],
-              textStyle: currentIndex == index
-                  ? TextUtil.get16(context, MyColor.gray90).copyWith(fontWeight: FontWeight.bold)
-                  : TextUtil.get16(context, MyColor.gray90),
+              textStyle: currentIndex == index ? boldTextStyle : normalTextStyle,
               size: const Size(100, 40),
               onPressed: () {
+                print('CustomTextButton pressed: index $index');
                 MenuUtil.changeIndex(context, index);
               },
             );
