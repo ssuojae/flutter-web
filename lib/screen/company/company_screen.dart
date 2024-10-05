@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/widgets/menu/menu.dart';
+import 'package:portfolio/widgets/page_drawer.dart';
 import 'package:portfolio/widgets/screen_layout_builder.dart';
 
 class CompanyScreen extends StatefulWidget {
@@ -19,6 +20,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
       mobile,
     ) {
       return Scaffold(
+        endDrawer: PageDrawer(currentIndex: 0, tablet: tablet),
         body: Column(
           children: [
             Menu(
